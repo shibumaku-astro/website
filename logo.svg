@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
+  <defs>
+    <clipPath id="half-ellipse-clip-1">
+      <rect x="0" y="0" width="500" height="250" />
+    </clipPath>
+  </defs>
+
+  <defs>
+    <clipPath id="half-ellipse-clip-2">
+      <rect x="0" y="250" width="500" height="500" />
+    </clipPath>
+  </defs>
+
+  <!-- 軌道の上半分 (隠れている部分) -->
+  <g clip-path="url(#half-ellipse-clip-1)">
+    <g transform="rotate(-15 250 250)">
+      <ellipse cx="250" cy="250" rx="220" ry="50" fill="none" stroke="#04BFBF" stroke-width="10" />
+    </g>
+  </g>
+
+  <circle cx="250" cy="250" r="100" fill="#376BF0" stroke="#000" stroke-width="5" /> <!-- 地球を表す円 -->
+  <path d="M250 350 A100 100 0 0 0 250 150" fill="#1A3270" stroke="#000" stroke-width="5" /> <!-- 地球の影 -->
+  <ellipse cx="250" cy="250" rx="50" ry="97.5" fill="#376BF0" stroke="none"/> <!-- 地球の影を隠す楕円 -->
+
+
+  <circle cx="110" cy="313" r="40" fill="#8C8C8C" stroke="#000" stroke-width="5" /> <!-- 月を表す円 -->
+  <path d="M110 353 A40 40 0 0 0 110 273" fill="#595959" stroke="#000" stroke-width="5" /> <!-- 月の影 -->
+  <ellipse cx="110" cy="313" rx="10" ry="37.5" fill="#8C8C8C" stroke="none"/> <!-- 月の影を隠す楕円 -->
+
+  <!-- 軌道の下半分 (隠れていない部分) -->
+  <g clip-path="url(#half-ellipse-clip-2)">
+    <g transform="rotate(-15 250 250)">
+      <ellipse cx="250" cy="250" rx="220" ry="50" fill="none" stroke="#04BFBF" stroke-width="10" />
+    </g>
+  </g>
+
+  <!-- 地球の目 -->
+  <rect x="210" y="210" width="10" height="70" rx="5" ry="5" fill="#000" stroke="none" stroke-width="2" />
+  <rect x="270" y="210" width="10" height="70" rx="5" ry="5" fill="#000" stroke="none" stroke-width="2" />
+</svg>
