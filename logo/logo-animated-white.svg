@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+
+  <script type="text/javascript">
+function toggleMask1() {
+  var element = document.getElementById("eye1");
+  if (element.style.mask === "none" || element.style.mask === "") {
+    element.style.mask = "url(#hide-by-earth-mask)";
+  }else {
+    element.style.mask = "none";
+  }
+}
+
+function toggleMask2() {
+  var element = document.getElementById("eye2");
+  if (element.style.mask === "none" || element.style.mask === "") {
+    element.style.mask = "url(#hide-by-earth-mask)";
+  }else {
+    element.style.mask = "none";
+  }
+}
+
+setTimeout(function() {
+  toggleMask1();
+  setInterval(toggleMask1, 2500);
+  },2250);
+setTimeout(function() {
+  toggleMask2();
+  setInterval(toggleMask2, 2500);
+  },1800);
+  </script>
+
+  <defs>
+    <mask id="hide-path-mask">
+      <rect x="0" y="0" width="100%" height="100%" fill="white" />
+      <path d="M250,250 L349,223 A102.5,102.5 0 0,0 150.75,275 Z" fill="black" />
+    </mask>
+  </defs>
+
+  <defs>
+    <mask id="hide-by-earth-mask">
+      <rect x="0" y="0" width="100%" height="100%" fill="white" />
+      <circle cx="250" cy="250" r="100" fill="#000" stroke="#000" stroke-width="5" />
+    </mask>
+  </defs>
+
+
+  <circle cx="250" cy="250" r="100" fill="#376BF0" stroke="#FFF" stroke-width="5" /> <!-- 地球を表す円 -->
+  <path d="M250 350 A100 100 0 0 0 250 150" fill="#1A3270" stroke="#FFF" stroke-width="5" /> <!-- 地球の影 -->
+  <ellipse cx="250" cy="250" rx="50" ry="97.5" fill="#376BF0" stroke="none"/> <!-- 地球の影を隠す楕円 -->
+
+  <!-- 軌道 -->
+  <g mask="url(#hide-path-mask)">
+    <g transform="rotate(-15 250 250)">
+      <ellipse cx="250" cy="250" rx="220" ry="50" fill="none" stroke="#04BFBF" stroke-width="10"/>
+    </g>
+  </g>
+
+  <!-- 地球の目 -->
+  <path id="eyePath" d="M317,180 a110,25 -15 1,0 0.1,0" fill="transparent"/>
+  <g id="eye1" mask="none">
+    <rect x="0" y="-20" width="10" height="70" rx="5" ry="5" fill="#FFF" stroke="none" stroke-width="2">
+      <animateMotion dur="5s" begin="-2.25s" repeatCount="indefinite">
+        <mpath href="#eyePath" />
+      </animateMotion>
+    </rect>
+  </g>
+  <g id="eye2" mask="none">
+    <rect x="0" y="-20" width="10" height="70" rx="5" ry="5" fill="#FFF" stroke="none" stroke-width="2">
+      <animateMotion dur="5s" begin="-2.85s" repeatCount="indefinite">
+        <mpath href="#eyePath" />
+      </animateMotion>
+    </rect>
+  </g>
+
+  <path id="motionPath" d="M403,175 a220,50 -15 1,0 0.1,0" fill="transparent"/>
+  <g mask="url(#hide-path-mask)">
+    <g >
+      <circle cx="0" cy="0" r="40" fill="#8C8C8C" stroke="#FFF" stroke-width="5"/> <!-- 月を表す円 -->
+      <path d="M0 40 A40 40 0 0 0 0 -40" fill="#595959" stroke="#FFF" stroke-width="5" /> <!-- 月の影 -->
+      <ellipse cx="0" cy="0" rx="10" ry="37.5" fill="#8C8C8C" stroke="none"/> <!-- 月の影を隠す楕円 -->
+      <animateMotion dur="5s" repeatCount="indefinite" begin="-2.5s">
+        <mpath href="#motionPath" />
+      </animateMotion>
+    </g>
+  </g>
+</svg>
