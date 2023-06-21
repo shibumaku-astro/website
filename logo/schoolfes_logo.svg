@@ -8,6 +8,12 @@
       <path d="M540,360 L639,333 A102.5,102.5 0 0,0 440.75,385 Z" fill="black" />
     </mask>
   </defs>
+  <defs>
+    <mask id="hide-by-earth-mask">
+      <rect x="0" y="0" width="100%" height="100%" fill="white" />
+      <circle cx="540" cy="360" r="100" fill="#000" stroke="#000" stroke-width="5" />
+    </mask>
+  </defs>
 
   <circle cx="540" cy="360" r="100" fill="#376BF0" stroke="#000" stroke-width="5" /> <!-- 地球を表す円 -->
   <path d="M540 460 A100 100 0 0 0 540 260" fill="#1A3270" stroke="#000" stroke-width="5" /> <!-- 地球の影 -->
@@ -22,6 +28,18 @@
 
   <!-- 地球の目 -->
   <path id="eyePath" d="M607,290 a110,25 -15 1,0 0.1,0" fill="transparent"/>
+  <g mask="url(#hide-by-earth-mask)">
+    <rect x="0" y="-20" width="10" height="70" rx="5" ry="5" fill="#FFF" stroke="#FFF" stroke-width="5">
+      <animateMotion dur="5s" begin="-2.25s" repeatCount="indefinite">
+        <mpath href="#eyePath" />
+      </animateMotion>
+    </rect>
+    <rect x="0" y="-20" width="10" height="70" rx="5" ry="5" fill="#FFF" stroke="#FFF" stroke-width="5">
+      <animateMotion dur="5s" begin="-2.85s" repeatCount="indefinite">
+        <mpath href="#eyePath" />
+      </animateMotion>
+    </rect>
+  </g>
   <rect x="0" y="-20" width="10" height="70" rx="5" ry="5" fill="#000" stroke="none" stroke-width="2">
     <animateMotion dur="5s" begin="-2.25s" repeatCount="indefinite">
       <mpath href="#eyePath" />
