@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 720" width="1080" height="720">
+  <rect width="100%" height="100%" fill="black"/>
+  <text x="40" y="300" font-size="300" font-weight="900" fill="white">渋幕</text>
+  <text x="440" y="660" font-size="300" font-weight="900" fill="white">天文</text>
+  <defs>
+    <mask id="hide-path-mask">
+      <rect x="0" y="0" width="100%" height="100%" fill="white" />
+      <path d="M540,360 L639,333 A102.5,102.5 0 0,0 440.75,385 Z" fill="black" />
+    </mask>
+  </defs>
+
+  <circle cx="540" cy="360" r="100" fill="#376BF0" stroke="#000" stroke-width="5" /> <!-- 地球を表す円 -->
+  <path d="M540 460 A100 100 0 0 0 540 260" fill="#1A3270" stroke="#000" stroke-width="5" /> <!-- 地球の影 -->
+  <ellipse cx="540" cy="360" rx="50" ry="97.5" fill="#376BF0" stroke="none"/> <!-- 地球の影を隠す楕円 -->
+
+  <!-- 軌道 -->
+  <g mask="url(#hide-path-mask)">
+    <g transform="rotate(-15 540 360)">
+      <ellipse cx="540" cy="360" rx="220" ry="50" fill="none" stroke="#04BFBF" stroke-width="10"/>
+    </g>
+  </g>
+
+  <!-- 地球の目 -->
+  <path id="eyePath" d="M607,290 a110,25 -15 1,0 0.1,0" fill="transparent"/>
+  <rect x="0" y="-20" width="10" height="70" rx="5" ry="5" fill="#000" stroke="none" stroke-width="2">
+    <animateMotion dur="5s" begin="-2.25s" repeatCount="indefinite">
+      <mpath href="#eyePath" />
+    </animateMotion>
+  </rect>
+  <rect x="0" y="-20" width="10" height="70" rx="5" ry="5" fill="#000" stroke="none" stroke-width="2">
+    <animateMotion dur="5s" begin="-2.85s" repeatCount="indefinite">
+      <mpath href="#eyePath" />
+    </animateMotion>
+  </rect>
+
+  <path id="motionPath" d="M693,285 a220,50 -15 1,0 0.1,0" fill="transparent"/>
+  <g mask="url(#hide-path-mask)">
+    <g >
+      <circle cx="0" cy="0" r="40" fill="#8C8C8C" stroke="#000" stroke-width="5"/> <!-- 月を表す円 -->
+      <path d="M0 40 A40 40 0 0 0 0 -40" fill="#595959" stroke="#000" stroke-width="5" /> <!-- 月の影 -->
+      <ellipse cx="0" cy="0" rx="10" ry="37.5" fill="#8C8C8C" stroke="none"/> <!-- 月の影を隠す楕円 -->
+      <animateMotion dur="5s" repeatCount="indefinite" begin="-2.5s">
+        <mpath href="#motionPath" />
+      </animateMotion>
+    </g>
+  </g>
+</svg>
