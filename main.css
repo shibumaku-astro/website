@@ -1,1 +1,115 @@
+*{
 
+    padding:0;
+  }
+
+header{
+    background-color:#046434;
+}
+
+ul {
+    list-style: none;
+}
+
+h2{
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 2vh;
+}
+
+a{
+    text-decoration: none;
+    font-weight:bold;
+    display: inline-block;
+    transition:.3s;
+    transform: scale(1);
+}
+
+a:hover{
+    font-weight:bold;
+    transform: scale(1.05);
+}
+
+.activity_title {
+    font-size: 20px;
+    border-bottom: solid 3px #519fcf;
+}
+
+.art1{
+    float:left; 
+    width:100%;
+}
+
+.art {
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.art6{
+    float:left; 
+    width:100%;
+}
+
+.clear{
+    clear:both;
+}
+
+.top_images {
+    height: 50vh;
+    width: 100%;
+    position: relative;
+}
+
+.t_image {
+    position: absolute;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    background-position: center center;
+    background-size: 150%;
+    animation: image-switch-animation 25s infinite;
+}
+
+@keyframes image-switch-animation {
+    0%{ opacity: 0;}
+    5%{ 
+        opacity: 1;
+        background-size: 150%;
+    }
+    25%{ 
+        opacity: 1;
+        background-size: 120%;
+    }
+    30%{ opacity: 0;}
+    100%{ opacity: 0;}
+}
+
+.t_image:nth-of-type(1) {
+    animation-delay: 0s;
+}
+.t_image:nth-of-type(2) {
+    animation-delay: 5s;
+}
+.t_image:nth-of-type(3) {
+    animation-delay: 10s;
+}
+.t_image:nth-of-type(4) {
+    animation-delay: 15s;
+}
+.t_image:nth-of-type(5) {
+    animation-delay: 20s;
+}
+
+@media (max-width: 1000px) {
+    .art {
+      width: 100%;
+      float: none;
+    }
+}
