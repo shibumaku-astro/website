@@ -48,6 +48,11 @@ a:hover{
     box-sizing: border-box;
     padding: 10px;
 }
+.art2 {
+    float:left;
+    width:45%;
+    padding-right:5%;
+}
 
 .art6{
     float:left; 
@@ -76,6 +81,23 @@ a:hover{
     background-size: 150%;
     animation: image-switch-animation 25s infinite;
 }
+.index {
+    font-size: 1.33em;
+    font-weight: bold;
+    padding-bottom: .2em;
+    margin-bottom: .5em;
+    position: relative;
+    border-bottom: solid 1px #ffffff;
+    color: #046434;
+}
+.index:after {
+    position: absolute;
+    content: " ";
+    display:block;
+    border-bottom: solid 1px #046434;
+    width: 90%;bottom: -3px;
+}
+
 
 @keyframes image-switch-animation {
     0%{ opacity: 0;}
@@ -106,10 +128,24 @@ a:hover{
 .t_image:nth-of-type(5) {
     animation-delay: 20s;
 }
-
-@media (max-width: 1000px) {
-    .art {
-      width: 100%;
-      float: none;
+@media screen and (min-width: 800px){
+	html {
+        background-color:#001F43;
+    }
+	body {
+        width:800px;
+        margin:0 auto;
+        background-color: white;
+        padding-left:20px;
+        padding-right:20px;
+    }
+	art1 {
+        float:left;
+        width:760px;
+    }
+	art2{
+        float:left;
+        width:370px;
+        padding-right:10px;
     }
 }
