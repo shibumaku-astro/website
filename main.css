@@ -59,6 +59,16 @@ a:hover{
     width:100%;
 }
 
+.gallery{
+    width:45%;
+    text-align:center;
+    padding:5px;
+    float:left;
+}
+
+.gallery img{
+    width:100%;
+}
 .clear{
     clear:both;
 }
